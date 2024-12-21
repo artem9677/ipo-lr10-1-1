@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup as bs
 import json
+from bs4 import Tag
 
 url = 'https://news.ycombinator.com/'
 
@@ -48,59 +49,28 @@ for i in range(len(list_titles)):
 with open(file_json, "w", encoding='utf-8') as file:
     json.dump(writer_list, file, indent=4, ensure_ascii=False)
 
-file_index = "index.html"
+with open('template.html', 'r', encoding='utf-8') as file:
+    filedata = file.read()
 
-with open(file_index, "w", encoding='utf-8') as file:
-    file.write("""<html>
-<head>
-    <title>Hacker News</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        table {
-            border-collapse: collapse;
-            width: 80%;
-            margin: 20px auto;
-            background-color: #fff;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #2F4F4F;
-            color: white;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-    </style>
-</head>
-<body>
-    <h1>Hacker News</h1>
-    <table>
-        <tr>
-            <th>Number</th>
-            <th>Title</th>
-            <th>Comments</th>
-        </tr>
-""")
+soup = bs(filedata, "html.parser")
 
-    with open(file_json, "r", encoding='utf-8') as input_file:
-        data_writer = json.load(input_file)
-        for i, item in enumerate(data_writer):
-            file.write(f"<tr><td>{i + 1}</td><td>{item['Title']}</td><td>{item['Comments']}</td></tr>\n")
+element_to_paste = soup.find("bodytable", id="bodytable")
 
-    file.write("""
-    </table>
-    <p style="text-align: center;"><a href="https://news.ycombinator.com/">Источник данных</a></p>
-</body>
-</html>
-""")
+data = []
+
+
+for idx, item in enumerate(writer_list, start=1):
+    new_el = Tag(name="tr")
+    new_el['class'] = 'Title'
+    new_el.append(Tag(name="td"))
+    new_el.contents[0].string = str(idx)
+    new_el.append(Tag(name="td"))
+    new_el.contents[1].string = item["Title"]
+    new_el.append(Tag(name="td"))
+    new_el.contents[2].string = item["Comments"]
+    
+    element_to_paste.append(new_el)
+
+
+with open("Index.html", "w+", encoding="utf-8") as file:
+    file.write(soup.prettify())

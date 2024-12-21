@@ -1,75 +1,388 @@
-<html>
-<head>
-    <title>Hacker News</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-        table {
-            border-collapse: collapse;
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Красивая таблица
+  </title>
+  <style>
+   table {
             width: 80%;
             margin: 20px auto;
-            background-color: #fff;
+            border-collapse: collapse;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
         }
         th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
+            padding: 15px;
             text-align: left;
+            border-bottom: 1px solid #dddddd;
         }
         th {
-            background-color: #2F4F4F;
+            background-color: #708090;
             color: white;
         }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
+        tr:hover {
+            background-color: #f1f1f1;
         }
-    </style>
-</head>
-<body>
-    <h1>Hacker News</h1>
-    <table>
-        <tr>
-            <th>Number</th>
-            <th>Title</th>
-            <th>Comments</th>
-        </tr>
-<tr><td>1</td><td>Moon</td><td>32</td></tr>
-<tr><td>2</td><td>Launch HN: Langfuse (YC W23) – OSS Tracing and Workflows to Improve LLM Apps</td><td>18</td></tr>
-<tr><td>3</td><td>Crunch – a Scheme compiler with a minimal runtime</td><td>35</td></tr>
-<tr><td>4</td><td>How I used linear algebra to build an interactive diagramming editor</td><td>17</td></tr>
-<tr><td>5</td><td>Droste’s Lair</td><td>5</td></tr>
-<tr><td>6</td><td>Getting to 2M users as a one woman dev team [video]</td><td>173</td></tr>
-<tr><td>7</td><td>Natural Number Game: build the basic theory of the natural numbers from scratch</td><td>9</td></tr>
-<tr><td>8</td><td>SpiceNice – An Open Source Spice Database</td><td>5</td></tr>
-<tr><td>9</td><td>Inside the War Against Headlight Brightness</td><td>4</td></tr>
-<tr><td>10</td><td>3D-Printed Dune Chess Set</td><td>42</td></tr>
-<tr><td>11</td><td>New LLM optimization technique slashes memory costs</td><td>163</td></tr>
-<tr><td>12</td><td>Always go to the funeral (2005)</td><td>233</td></tr>
-<tr><td>13</td><td>When should we require that firmware be free?</td><td>50</td></tr>
-<tr><td>14</td><td>MIT study explains why laws are written in an incomprehensible style</td><td>246</td></tr>
-<tr><td>15</td><td>Making a watch from scratch</td><td>66</td></tr>
-<tr><td>16</td><td>Zaymo (YC W24) Is Hiring Founding Engineer (In Person – Utah)</td><td>66</td></tr>
-<tr><td>17</td><td>Lfgss shutting down 16th March 2025 (day before Online Safety Act is enforced)</td><td>475</td></tr>
-<tr><td>18</td><td>Multilspy: Building a common LSP client handtuned for all Language servers</td><td>9</td></tr>
-<tr><td>19</td><td>Veo 2: Our video generation model</td><td>281</td></tr>
-<tr><td>20</td><td>In Search of a Faster SQLite</td><td>138</td></tr>
-<tr><td>21</td><td>Research of RAM data remanence times</td><td>4</td></tr>
-<tr><td>22</td><td>Microsoft Confirms Password Deletion for 1B Users</td><td>200</td></tr>
-<tr><td>23</td><td>What did Ada Lovelace's program actually do? (2018)</td><td>114</td></tr>
-<tr><td>24</td><td>Sorry, Mad Men. The Ad Revolution Is Here</td><td>24</td></tr>
-<tr><td>25</td><td>Charles de Gaulle manuscripts discovered in a safe</td><td>71</td></tr>
-<tr><td>26</td><td>Advent of Code on the Nintendo DS</td><td>45</td></tr>
-<tr><td>27</td><td>Mirror bacteria research poses significant risks, scientists warn</td><td>203</td></tr>
-<tr><td>28</td><td>Ruby Video – On a mission to index all Ruby conferences</td><td>55</td></tr>
-<tr><td>29</td><td>Modelica</td><td>96</td></tr>
-<tr><td>30</td><td>Now We're All Forked</td><td>6</td></tr>
-
-    </table>
-    <p style="text-align: center;"><a href="https://news.ycombinator.com/">Источник данных</a></p>
-</body>
+  </style>
+ </head>
+ <body>
+  <h1>
+   Hacker News
+  </h1>
+  <table>
+   <thead>
+    <tr>
+     <th>
+      №
+     </th>
+     <th>
+      Название
+     </th>
+     <th>
+      Комментарии
+     </th>
+    </tr>
+   </thead>
+   <bodytable id="bodytable">
+    <tr class="Title">
+     <td>
+      1
+     </td>
+     <td>
+      OpenAI O3 breakthrough high score on ARC-AGI-PUB
+     </td>
+     <td>
+      1132
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      2
+     </td>
+     <td>
+      Compiling C to Safe Rust, Formalized
+     </td>
+     <td>
+      64
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      3
+     </td>
+     <td>
+      Building Effective "Agents"
+     </td>
+     <td>
+      52
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      4
+     </td>
+     <td>
+      Grayjay Desktop App
+     </td>
+     <td>
+      194
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      5
+     </td>
+     <td>
+      The Ugly Truth About Spotify Is Finally Revealed
+     </td>
+     <td>
+      57
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      6
+     </td>
+     <td>
+      A Raycaster in Bash
+     </td>
+     <td>
+      17
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      7
+     </td>
+     <td>
+      Show HN: Artemis, a Calm Web Reader
+     </td>
+     <td>
+      52
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      8
+     </td>
+     <td>
+      A bestiary of exotic hadrons
+     </td>
+     <td>
+      52
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      9
+     </td>
+     <td>
+      Decline in teen drug use continues, surprising experts
+     </td>
+     <td>
+      261
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      10
+     </td>
+     <td>
+      The era of open voice assistants
+     </td>
+     <td>
+      257
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      11
+     </td>
+     <td>
+      Tldraw Computer
+     </td>
+     <td>
+      100
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      12
+     </td>
+     <td>
+      Boardgame.io: an engine for creating turn-based games using JavaScript
+     </td>
+     <td>
+      59
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      13
+     </td>
+     <td>
+      The Focusing Illusion
+     </td>
+     <td>
+      1
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      14
+     </td>
+     <td>
+      We don't know how many birds die in structural collisions
+     </td>
+     <td>
+      5
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      15
+     </td>
+     <td>
+      Show HN: celine/bibhtml: a Web Components referencing system for HTML documents
+     </td>
+     <td>
+      1
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      16
+     </td>
+     <td>
+      A Gentle Introduction to Graph Neural Networks (2021)
+     </td>
+     <td>
+      30
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      17
+     </td>
+     <td>
+      My Pal, the Ancient Philosopher
+     </td>
+     <td>
+      6
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      18
+     </td>
+     <td>
+      Ghost artists on Spotify
+     </td>
+     <td>
+      315
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      19
+     </td>
+     <td>
+      Ascending Mount FujiNet
+     </td>
+     <td>
+      4
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      20
+     </td>
+     <td>
+      US judge finds Israel's NSO Group liable for hacking journalists via WhatsApp
+     </td>
+     <td>
+      7
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      21
+     </td>
+     <td>
+      Kelly Can't Fail
+     </td>
+     <td>
+      108
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      22
+     </td>
+     <td>
+      Show HN:Free Online Tool to Experience Microsoft's MarkItdown
+     </td>
+     <td>
+      2
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      23
+     </td>
+     <td>
+      The Parker Solar Probe will make its closest approach yet to the Sun
+     </td>
+     <td>
+      103
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      24
+     </td>
+     <td>
+      Britannica Didn’t Just Survive. It’s an A.I. Company Now.
+     </td>
+     <td>
+      23
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      25
+     </td>
+     <td>
+      Rules to avoid common extended inline assembly mistakes
+     </td>
+     <td>
+      7
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      26
+     </td>
+     <td>
+      A 10-Year Battery for AirTag
+     </td>
+     <td>
+      534
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      27
+     </td>
+     <td>
+      DOS APPEND
+     </td>
+     <td>
+      43
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      28
+     </td>
+     <td>
+      First Actively Forming Galaxy as Lightweight as Young Milky Way
+     </td>
+     <td>
+      43
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      29
+     </td>
+     <td>
+      The "Winkel" Bunker – Arcanum Urbex
+     </td>
+     <td>
+      2
+     </td>
+    </tr>
+    <tr class="Title">
+     <td>
+      30
+     </td>
+     <td>
+      How to lose a fortune with one bad click
+     </td>
+     <td>
+      258
+     </td>
+    </tr>
+   </bodytable>
+  </table>
+  <p>
+   <a href="https://news.ycombinator.com/">
+    Оригинальный сайт
+   </a>
+  </p>
+ </body>
 </html>
